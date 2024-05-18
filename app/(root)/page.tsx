@@ -1,7 +1,7 @@
 import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchPosts } from "@/lib/actions/thread.action";
 import { currentUser } from "@clerk/nextjs/server";
-export default async function Home() {
+ async function Home() {
   const result = await fetchPosts(1, 30);
   const user = await currentUser();
   return (
@@ -31,3 +31,4 @@ export default async function Home() {
     </>
   );
 }
+export default Home;
